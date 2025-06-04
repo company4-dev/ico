@@ -1,5 +1,5 @@
 {
-    "name": "chrisjean/php-ico",
+    "name": "company4-dev/php-ico",
     "description": "An easy-to-use library to generate valid ICO files.",
     "version": "1.0.4",
     "keywords": ["ico", "favicon"],
