@@ -49,6 +49,11 @@ class Ico
 
         $this->add_image($source_file, $sizes);
 
+        if ($target_path === null) {
+            $info        = pathinfo($source_file);
+            $target_path = $info['dirname'].'/'.$info['filename'].'.ico';
+        }
+
         return $this->save($target_path);
     }
 
