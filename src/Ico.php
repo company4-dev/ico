@@ -1,10 +1,10 @@
 <?php
 
-namespace Company4;
+namespace Company4\Ico;
 
 use Exception;
 
-class ICO
+class Ico
 {
     private $images        = [];
     private bool $is_valid = false;
