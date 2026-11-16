@@ -3,11 +3,11 @@
 namespace Company4\Ico;
 
 use Exception;
+use GdImage;
 
 class Ico
 {
-    private $images        = [];
-    private bool $is_valid = false;
+    private $images = [];
 
     /**
      * Constructor - Create a new ICO generator.
@@ -47,7 +47,9 @@ class Ico
             }
         }
 
-        $this->add_image($source_file, $sizes);
+        if (!$this->add_image($source_file, $sizes)) {
+            throw new Exception("Failed to add image: $source_file");
+        }
 
         if ($target_path === null) {
             $info        = pathinfo($source_file);
@@ -71,23 +73,14 @@ class Ico
      *                       of the source image will be used.
      * @return bool   true on success and false on failure.
      */
-    private function add_image(string $file, array $sizes = [])
+    private function add_image(string $file, array $sizes = []): bool
     {
-        if (!$this->is_valid) {
-            return false;
-        }
-
         if (false === ($im = $this->load_image_file($file))) {
             return false;
         }
 
         if ($sizes === []) {
             $sizes = [imagesx($im), imagesy($im)];
-        }
-
-        // If just a single size was passed, put it in array.
-        if (!is_array($sizes[0])) {
-            $sizes = [$sizes];
         }
 
         foreach ($sizes as $size) {
@@ -122,10 +115,6 @@ class Ico
      */
     private function save(string $file): bool
     {
-        if (!$this->is_valid) {
-            return false;
-        }
-
         if (false === ($data = $this->get_ico_data())) {
             return false;
         }
@@ -258,7 +247,7 @@ class Ico
     /**
      * Read in the source image file and convert it into a GD image resource.
      */
-    public function load_image_file($file)
+    private function load_image_file(string $file): false|GdImage
     {
         // Run a cheap check to verify that it is an image file.
         if (getimagesize($file) === false) {
