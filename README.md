@@ -1,13 +1,5 @@
-# PHP ICO
-Incremental Backups allows you to reduce the storage taken up by backups by only saving incremental changes. (Full database backups are always captured).
-
-Incremental Backups supports Laravel so your backups can be stored in a sensible location.
-
-On an initial run, the Incrementor will create a full backup. From then on it'll create a full database backup and any files that have been saved since the previous run.
-
-Run another full backup then the incrementor will start with changed from that backup.
-
-Want to just backup the database? Chain in `->database_only()` before `->run()` as explained below. This won't effect any future backups.
+# ICO
+ICO allows you to generate .ico files from pre-existing images.
 
 ## Installation
 
@@ -24,7 +16,7 @@ composer require company4-dev/ico
 | `$out`    | `string` | `null`  | Path to the target ICO file, if null, the file will be saved to the same location, but with a .ico extension.
 | `$sizes`  | `array`  | `[]`    | An array of sizes that the source image should be rendered at in the generated ICO file. If sizes are not supplied, sizes 16px<sup>2</sup>, 24px<sup>2</sup>, 32px<sup>2</sup>, 48px<sup>2</sup>, 256px<sup>2</sup> will be used.
 ```php
-use Company4\ICO;
+use Company4\Ico\Ico;
 
 $ico = new ICO(
     $path,
