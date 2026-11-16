@@ -1,6 +1,6 @@
 {
     "name": "ico",
-    "version": "1.4",
+    "version": "1.5",
     "description": "An easy-to-use library to generate valid ICO files.",
     "homepage": "https://github.com/company4-dev/ico",
     "bugs": {
