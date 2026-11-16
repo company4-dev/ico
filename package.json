@@ -1,13 +1,13 @@
 {
-    "name": "php-ico",
-    "version": "1.2",
+    "name": "ico",
+    "version": "1.1",
     "description": "An easy-to-use library to generate valid ICO files.",
-    "homepage": "https://github.com/company4-dev/php-ico",
+    "homepage": "https://github.com/company4-dev/ico",
     "bugs": {
-        "url": "https://github.com/company4-dev/php-ico/issues"
+        "url": "https://github.com/company4-dev/ico/issues"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/company4-dev/php-ico.git"
+        "url": "git+https://github.com/company4-dev/ico.git"
     }
 }
