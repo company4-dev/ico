@@ -1,28 +1,27 @@
 {
     "name": "company4-dev/php-ico",
     "description": "An easy-to-use library to generate valid ICO files.",
-    "version": "1.0.4",
+    "version": "1.0",
     "keywords": ["ico", "favicon"],
-    "homepage": "https://github.com/chrisbliss18/php-ico",
+    "homepage": "https://github.com/company4-dev/php-ico",
     "license": "GPL-2.0+",
     "authors": [
         {
-            "name": "Chris Jean",
-            "homepage": "https://chrisjean.com",
-            "role": "Developer"
+            "name": "Jas-n",
+            "homepage": "https://company4.dev"
         }
     ],
     "support": {
-        "issues": "https://github.com/chrisbliss18/php-ico/issues",
-        "source": "https://github.com/chrisbliss18/php-ico"
+        "issues": "https://github.com/company4-dev/php-ico/issues",
+        "source": "https://github.com/company4-dev/php-ico"
     },
     "require": {
-        "php": ">=5.2.4",
+        "php": ">=8.3",
         "ext-gd": "*"
     },
     "autoload": {
-        "classmap": [
-            "class-php-ico.php"
-        ]
+        "psr-4": {
+            "Company4\\Ico\\": "src/"
+        }
     }
 }
